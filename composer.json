@@ -20,5 +20,6 @@
   "autoload": {
     "psr-0": { "ZenSide\\SonataImageBundle":"" }
   },
-  "target-dir": "ZenSide/SonataImageBundle"
+  "target-dir": "ZenSide/SonataImageBundle",
+  "minimum-stability":"stable"
 }
