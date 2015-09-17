@@ -1,0 +1,18 @@
+services:
+    zenside.listener.image:
+        class: 'ZenSide\SonataImageBundle\Entity\Listener\ImageListener'
+        tags:
+            - { name: doctrine.event_listener, event: prePersist}
+            - { name: doctrine.event_listener, event: preUpdate}
+            - { name: doctrine.event_listener, event: postRemove}
+        calls:
+            - [ setContainer, [ '@service_container' ] ]
+
+    sonata.admin.image:
+        class: ZenSide\SonataImageBundle\Admin\ImageAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Images" }
+        arguments:
+            - ~
+            - ZenSide\SonataImageBundle\Entity\Image
+            - ~

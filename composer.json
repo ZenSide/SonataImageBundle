@@ -1,0 +1,24 @@
+{
+  "name": "zenside/sonata-image-bundle",
+  "type": "symfony-bundle",
+  "description": "Allow easy support for image upload in sonata forms with preview of current image in onetoone relation",
+  "keywords": [],
+  "license": "GPL-3.0+",
+  "authors": [
+    {
+      "name": "ZenSide - Nicolas Janel",
+      "email": "janel.nicolas@zenside.fr",
+      "homepage": "http://www.zenside.fr"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.3",
+    "symfony/symfony": "~2.6",
+    "symfony/assetic-bundle": "2.3.*",
+    "twig/extensions": "1.0.*"
+  },
+  "autoload": {
+    "psr-0": { "ZenSide\\SonataImageBundle":"" }
+  },
+  "target-dir": "ZenSide/SonataImageBundle"
+}
