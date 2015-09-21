@@ -3,6 +3,16 @@ ZenSide Sonata Image Bundle
 
 Allow to easyly add Image property to an entity to be included in Sonata Forms.
 
+Installation
+-----------
+Add bundle with composer
+
+    composer require zenside/sonata-image-bundle
+    
+And reference it in AppKernel.php
+
+    new ZenSide\SonataImageBundle\ZenSideSonataImageBundle(),
+
 Configuration
 ------------
 After downloaded and add to AppKernel the bundle, update your database to add Image entity
