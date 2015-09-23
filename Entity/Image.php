@@ -59,6 +59,16 @@ class Image
     /**
      * @JMS\VirtualProperty
      */
+    public function getExtension(){
+
+        $parts = explode('.',$this->getWebFilePath());
+
+        return $parts[count($parts)-1];
+    }
+
+    /**
+     * @JMS\VirtualProperty
+     */
     public function getUrl(){
         return $this->getWebFilePath();
     }
