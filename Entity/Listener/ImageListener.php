@@ -17,7 +17,12 @@ class ImageListener extends ContainerAware
         if ($image instanceof Image) {
 
             $server_folder = $this->container->get('kernel')->getRootDir().'/../web/'.self::UPLOAD_FOLDER;
-            $web_folder = 'http://'.$_SERVER['HTTP_HOST'].$this->container->get('templating.helper.assets')->getUrl(self::UPLOAD_FOLDER);
+
+            $web_folder = '';
+            if (isset($_SERVER['HTTP_HOST'])){
+                $web_folder = 'http://'.$_SERVER['HTTP_HOST'];
+            }
+            $web_folder .= $this->container->get('templating.helper.assets')->getUrl(self::UPLOAD_FOLDER);
 
             // the file property can be empty if the field is not required
             if (null === $image->getFile()) {
