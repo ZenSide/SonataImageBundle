@@ -111,20 +111,17 @@ class ImageListener extends ContainerAware
         }
     }
 
-    public
-    function prePersist(LifecycleEventArgs $args)
+    public function prePersist(LifecycleEventArgs $args)
     {
         $this->moveFile($args);
     }
 
-    public
-    function preUpdate(LifecycleEventArgs $args)
+    public function preUpdate(LifecycleEventArgs $args)
     {
         $this->moveFile($args);
     }
 
-    public
-    function postRemove(LifecycleEventArgs $args)
+    public function postRemove(LifecycleEventArgs $args)
     {
         $image = $args->getObject();
         if ($image instanceof Image) {
