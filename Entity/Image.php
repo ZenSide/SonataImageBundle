@@ -72,8 +72,33 @@ class Image
     public function getUrl(){
         return $this->getWebFilePath();
     }
+    /**
+     * @JMS\VirtualProperty
+     */
+    public function getUrlMedium(){
+        return $this->getWebFolder().$this->getFileNameWithoutExtension().'_medium.'.$this->getExtension();
+    }
+
     public function getWebFilePath(){
         return $this->getWebFolder().$this->getFilename();
+    }
+
+    /**
+     * @JMS\VirtualProperty
+     */
+    public function getFileNameWithoutExtension(){
+        $parts = explode('.',$this->getFilename());
+        $filenameWithoutExtension = '';
+        $i=0;
+        foreach($parts as $part)
+        {
+            if($i!=count($parts)-1)
+            {
+                $filenameWithoutExtension .= $part;
+            }
+            $i++;
+        }
+        return $filenameWithoutExtension;
     }
 
     /**
