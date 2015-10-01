@@ -122,7 +122,11 @@ class Image
      */
     public function getWebFolder()
     {
-        return $this->webFolder;
+        return defined('EXPORT_MODE') && constant('EXPORT_MODE') ? $this->getShortWebFolder() : $this->webFolder;
+    }
+
+    public function getShortWebFolder(){
+        return substr($this->webFolder, strpos($this->webFolder, 'uploads'));
     }
 
     /**
