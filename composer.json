@@ -16,7 +16,7 @@
     "symfony/symfony": "~2.6",
     "symfony/assetic-bundle": "2.3.*",
     "twig/extensions": "1.0.*",
-    "jms/serializer-bundle": "~0.13"
+    "jms/serializer-bundle" : "^1.0"
   },
   "autoload": {
     "psr-0": { "ZenSide\\SonataImageBundle":"" }
