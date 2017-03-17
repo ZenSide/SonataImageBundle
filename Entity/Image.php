@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Image
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="ZenSide\QQQBundle\Entity\Repository\ImageRepository")
+ * @ORM\Entity()
  * @ORM\HasLifecycleCallbacks
  */
 class Image
@@ -235,7 +235,7 @@ class Image
         return $this->updated;
     }
     public function __toString() {
-        return '<img src="'.$this->path.'">';
+        return '<img src="'.$this->getWebFilePath().'">';
     }
 
 }
